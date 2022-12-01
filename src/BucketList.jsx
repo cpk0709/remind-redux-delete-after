@@ -1,6 +1,8 @@
 import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-const BucketList = ({ list }) => {
+const BucketList = () => {
+  const my_list = useSelector((state) => state.bucket.list);
   const history = useHistory();
   const handleMoveToDetail = () => {
     history.push("/detail");
@@ -8,7 +10,7 @@ const BucketList = ({ list }) => {
 
   return (
     <div>
-      {list.map((todo) => {
+      {my_list.map((todo) => {
         return (
           <h2 key={todo.id} onClick={handleMoveToDetail}>
             {todo.title}
