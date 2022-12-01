@@ -28,7 +28,7 @@ function App() {
         <HeaderLine />
         <Switch>
           <Route path="/" exact>
-            <BucketList list={list} />
+            <BucketList />
           </Route>
           <Route path="/detail">
             <Detail />
