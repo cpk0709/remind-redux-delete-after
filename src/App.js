@@ -4,18 +4,23 @@ import styled from "styled-components";
 import Detail from "./Detail";
 import { Route, Switch } from "react-router-dom";
 import NotFound from "./NotFound";
+import { useDispatch } from "react-redux";
+import { createBucket } from "./redux/modules/bucket";
 
 function App() {
-  const [list, setList] = useState([
-    { title: "영화관가기", id: 1 },
-    { title: "리액트 공부하기", id: 2 },
-    { title: "여행가기", id: 3 },
-  ]);
+  // const [list, setList] = useState([
+  //   { title: "영화관가기", id: 1 },
+  //   { title: "리액트 공부하기", id: 2 },
+  //   { title: "여행가기", id: 3 },
+  // ]);
 
   const text = useRef();
 
+  const dispatch = useDispatch();
+
   const addBucketList = () => {
-    setList([...list, { title: text.current.value, id: list.length + 1 }]);
+    // setList([...list, { title: text.current.value, id: list.length + 1 }]);
+    dispatch(createBucket(text.current.value));
   };
 
   return (
