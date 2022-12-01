@@ -35,7 +35,7 @@ function App() {
           <Route path="/" exact>
             <BucketList />
           </Route>
-          <Route path="/detail">
+          <Route path="/detail/:id">
             <Detail />
           </Route>
           <NotFound />
