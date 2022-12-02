@@ -6,12 +6,13 @@ const Detail = () => {
   const bucketId = params.id;
   const bucketList = useSelector((state) => state.bucket.list);
 
-  const bucket = bucketList.filter((bucket) => bucket.id === Number(bucketId));
+  const bucket = bucketList.find((bucket) => bucket.id === Number(bucketId));
+  console.log(bucket);
   //보완필요
   return (
     <>
       <h1>내 버킷 상세페이지</h1>
-      <h3>{bucket[0].title}</h3>
+      <h3>{bucket.title}</h3>
     </>
   );
 };
