@@ -10,7 +10,7 @@ const Detail = () => {
   //보완필요
   return (
     <>
-      <h1>상세페이지</h1>
+      <h1>내 버킷 상세페이지</h1>
       <h3>{bucket[0].title}</h3>
     </>
   );
